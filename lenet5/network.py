@@ -7,9 +7,10 @@ class LeNet5(nn.Module):
 
     def __init__(self):
        super().__init__()
+       
+       self.tanh = nn.Tanh()
        self.conv1 = nn.Conv2d(in_channels=3, out_channels=6, kernel_size=(5,5), stride=1)
        self.avgpool1 = nn.AvgPool2d(kernel_size=(2,2))
-       self.tanh = nn.Tanh()
        self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=(5,5), stride=1)
        self.avgpool2 = nn.AvgPool2d(kernel_size=(2,2))
        self.conv3 = nn.Conv2d(in_channels=16, out_channels=120, kernel_size=(5,5), stride=1)
